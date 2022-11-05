@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RandomLegendsPicker</title>
+<title>3-05_logical</title>
 <link href="../images/favicon.ico" rel="shortcut icon">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
 <link href="../css/style.css" rel="stylesheet">
@@ -75,73 +75,72 @@
 'use strict';
 
 // レジェンドの数
-var legendsNum = 15
+var legendsNum = 16
 // 初期値
-var min = 1 ;
 // ボタンを押したらレジェンドを表示
 document.getElementById('form').onsubmit = function(event) {
     event.preventDefault();
     // レジェンドの番号をランダムに取得
-    var ramdomNum = Math.floor( Math.random() * legendsNum ) +1;
+    var randomNum = Math.floor( Math.random() * legendsNum ) +1;
     // レジェンドの番号に対応させて表示を変更
     // ロジックは作り直す． json 外に出す？関数は別にする
-    if (randomNum = 1) {
+    if (randomNum == 1) {
         document.getElementById('legendName').textContent = `レイス`; 
         document.getElementById('bigimg').src = "../images/wraith.png";
     }
-    if (randomNum = 2) {
+    if (randomNum == 2) {
         document.getElementById('legendName').textContent = `ブラッドハウンド`; 
         document.getElementById('bigimg').src = "../images/bloodhound.png";
     }
-    if (randomNum = 3) {
+    if (randomNum == 3) {
         document.getElementById('legendName').textContent = `アッシュ`; 
         document.getElementById('bigimg').src = "../images/ash.png";
     }
-    if (randomNum = 4) {
+    if (randomNum == 4) {
         document.getElementById('legendName').textContent = `バンガロール`; 
         document.getElementById('bigimg').src = "../images/bangalore.png";
     }
-    if (randomNum = 5) {
+    if (randomNum == 5) {
         document.getElementById('legendName').textContent = `コーsスティック`; 
         document.getElementById('bigimg').src = "../images/caustic.png";
     }
-    if (randomNum = 6) {
+    if (randomNum == 6) {
         document.getElementById('legendName').textContent = `クリプト`; 
         document.getElementById('bigimg').src = "../images/crypto.png";
     }
-    if (randomNum = 7) {
+    if (randomNum == 7) {
         document.getElementById('legendName').textContent = `ローバ`; 
         document.getElementById('bigimg').src = "../images/loba.png";
     }
-    if (randomNum = 8) {
+    if (randomNum == 8) {
         document.getElementById('legendName').textContent = `オクタン`; 
         document.getElementById('bigimg').src = "../images/octane.png";
     }
-    if (randomNum = 9) {
+    if (randomNum == 9) {
         document.getElementById('legendName').textContent = `パスファインダー`; 
         document.getElementById('bigimg').src = "../images/pathfinder.png";
     }
-    if (randomNum = 10) {
+    if (randomNum == 10) {
         document.getElementById('legendName').textContent = `ランパート`; 
         document.getElementById('bigimg').src = "../images/rampart.png";
     }
-    if (randomNum = 11) {
+    if (randomNum == 11) {
         document.getElementById('legendName').textContent = `レブナントw`; 
         document.getElementById('bigimg').src = "../images/revenant.png";
     }
-    if (randomNum = 12) {
+    if (randomNum == 12) {
         document.getElementById('legendName').textContent = `シア`; 
         document.getElementById('bigimg').src = "../images/seer.png";
     }
-    if (randomNum = 13) {
+    if (randomNum == 13) {
         document.getElementById('legendName').textContent = `ヴァルキリー`; 
         document.getElementById('bigimg').src = "../images/valkyrie.png";
     }
-    if (randomNum = 14) {
+    if (randomNum == 14) {
         document.getElementById('legendName').textContent = `ヴァンテージ`; 
         document.getElementById('bigimg').src = "../images/vantage.png";
     }
-    if (randomNum = 15) {
+    if (randomNum == 15) {
         document.getElementById('legendName').textContent = `ワットソン`; 
         document.getElementById('bigimg').src = "../images/wattson.png";
     }
