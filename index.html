@@ -85,9 +85,8 @@
 </footer>
 <script>
 'use strict';
-
 // レジェンドの数
-var legendsNum = 15
+var legendsNum = 16
 // 初期値
 // ボタンを押したらレジェンドを表示
 document.getElementById('form').onsubmit = function(event) {
@@ -155,6 +154,10 @@ document.getElementById('form').onsubmit = function(event) {
     if (randomNum == 15) {
         document.getElementById('legendName').textContent = `ワットソン`; 
         document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/wattson.png?raw=true";
+    }
+    if (randomNum == 16) {
+        document.getElementById('legendName').textContent = `カタリスト`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/catalyst.png?raw=true";
     }
 }
     
