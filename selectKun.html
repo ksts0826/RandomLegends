@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3-05_logical</title>
+<link rel="shortcut icon" href="https://ksts0826.github.io/ChoiceApp/_common/images/favicon.ico" />
+    <!--
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" />
+-->
+<link rel="stylesheet" href="https://ksts0826.github.io/ChoiceApp/_common/css/style.css" />
+</head>
+
+<body>
+<header>
+<div class="container">
+<h1>選択決定くん</h1>
+<h4>決定に困ったとき，選ぶべき選択肢を決めてくれます．</h4>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p id="select2">あああ</p>
+    <p id="select3">あああ</p>
+    <p id="select4">あああ</p>
+    <p id="select5">あああ</p>
+<form action="#" id="form">
+    何択？<br>
+    <input type="number" name="word">
+    <input type="submit" value="決定">
+</form>
+<p id="output"></p>
+
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+'use strict';
+
+const getMinutes = new Date().getMinutes();
+
+let taku2 = getMinutes % 2;
+let taku3 = getMinutes % 3;
+let taku4 = getMinutes % 4;
+let taku5 = getMinutes % 5;
+if(taku2 === 0){
+    taku2 = 2
+}
+if(taku3 === 0){
+    taku3 = 3
+}
+if(taku4 === 0){
+    taku4 = 4
+}
+if(taku2 === 5){
+    taku5 = 5
+}
+
+document.getElementById('select2').textContent = "2択なら，" + taku2 +  "番目！"
+document.getElementById('select3').textContent = "3択なら，" + taku3 + "番目！"
+document.getElementById('select4').textContent = "4択なら，" + taku4 + "番目！"
+document.getElementById('select5').textContent = "5択なら，" + taku5 + "番目！"
+
+document.getElementById('form').onsubmit = function(event) {
+    event.preventDefault();
+    var min = 1 ;
+    var max = document.getElementById('form').word.value ;
+    var randomNum = Math.floor( Math.random() * max ) +1;
+    document.getElementById('output').textContent = `「${max}」択なら，${randomNum}番目！！`;
+};
+</script>
+</body>
+</html>
