@@ -47,10 +47,13 @@
     position: relative;
     }
     img {
-    background-image: url("https://ksts0826.github.io/RandomLegends/images/loading.gif");
+    background-image: url("../images/loading.gif");
     background-repeat: no-repeat;
     background-position: center center;
     }
+
+
+    
     </style>
 </head>
 
@@ -60,7 +63,6 @@
 <h1>RandomLegendsPicker
 </h1>
 <h4>レジェンドをランダムに選びます．</h4>
-
 </div><!-- /.container -->
 </header>
 <main>
@@ -85,8 +87,9 @@
 </footer>
 <script>
 'use strict';
+
 // レジェンドの数
-var legendsNum = 16
+var legendsNum = 24
 // 初期値
 // ボタンを押したらレジェンドを表示
 document.getElementById('form').onsubmit = function(event) {
@@ -158,6 +161,38 @@ document.getElementById('form').onsubmit = function(event) {
     if (randomNum == 16) {
         document.getElementById('legendName').textContent = `カタリスト`; 
         document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/catalyst.png?raw=true";
+    }
+    if (randomNum == 17) {
+        document.getElementById('legendName').textContent = `ホライゾン`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/horizon.png?raw=true";
+    }
+    if (randomNum == 18) {
+        document.getElementById('legendName').textContent = `ジブラルタル`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/gibraltar.png?raw=true";
+    }
+    if (randomNum == 19) {
+        document.getElementById('legendName').textContent = `マッドマギー`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/maggie.png?raw=true";
+    }
+    if (randomNum == 20) {
+        document.getElementById('legendName').textContent = `ミラージュ`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/mirage.png?raw=true";
+    }
+    if (randomNum == 21) {
+        document.getElementById('legendName').textContent = `ライフライン`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/lifeline.png?raw=true";
+    }
+    if (randomNum == 22) {
+        document.getElementById('legendName').textContent = `ヒューズ`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/fuse.png?raw=true";
+    }
+    if (randomNum == 23) {
+        document.getElementById('legendName').textContent = `ニューキャッスル`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/newcastle.png?raw=true";
+    }
+    if (randomNum == 24) {
+        document.getElementById('legendName').textContent = `ホライゾン`; 
+        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/horizon.png?raw=true";
     }
 }
     
