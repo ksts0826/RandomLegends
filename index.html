@@ -6,7 +6,7 @@
 <title>RandomLegendsPicker</title>
 <link href="https://github.com/ksts0826/RandomLegends/blob/main/images/favicon.ico" rel="shortcut icon">
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
-<link rel="stylesheet" href="https://ksts0826.github.io/RandomLegends/css/style.css" />
+<link href="https://github.com/ksts0826/RandomLegends/blob/main/css/style.css" rel="stylesheet">
 <style>
     section img {
         max-width: 100%;
@@ -15,6 +15,7 @@
         margin: 0 auto 0 auto;
         max-width: 90%;
         width: 500px;
+        /*500px;*/
     }
     ul {
         display: flex;
@@ -28,6 +29,10 @@
     }
     li:last-of-type {
         margin-right: 0;
+    }
+    .example{
+    width: fit-content;
+    margin: auto;
     }
     </style>
 </head>
@@ -43,24 +48,16 @@
 <main>
 <div class="container">
 <section>
-    <p id="legendName"></p>
-
-<p id="output"></p>
-<div class="center">
-    <div>
-        <form action="#" id="form">
+<div text-align:center class="center">
+    <div class="center">
+        <p class="example" id="legendName"></p>
+        <form action="#" id="form" class="example">
+            <p text-align:center id="legendName"></p>
             <input type="submit" value="RANDOM PICK">
-        </form>        
+        </form> 
+        <p id="output"></p>       
         <img src="" id="bigimg">
     </div>
-    <!--
-    <ul>
-        <li><img src="thumb-img1.jpg" class="thumb" data-image="img1.jpg"></li>
-        <li><img src="thumb-img2.jpg" class="thumb" data-image="img2.jpg"></li>
-        <li><img src="thumb-img3.jpg" class="thumb" data-image="img3.jpg"></li>
-        <li><img src="thumb-img4.jpg" class="thumb" data-image="img4.jpg"></li>
-    </ul>
-    -->
 </div>
 
 </section>
