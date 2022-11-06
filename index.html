@@ -51,17 +51,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     }
-
-
-    
-    </style>
+</style>
 </head>
-
 <body>
 <header>
 <div class="container">
-<h1>RandomLegendsPicker
-</h1>
+<h1>RandomLegendsPicker</h1>
 <h4>レジェンドをランダムに選びます．</h4>
 </div><!-- /.container -->
 </header>
@@ -71,7 +66,9 @@
 <div class="center">
     <div class="center">
         <h2 id="legendName"></h2>
-        <img src="https://github.com/ksts0826/RandomLegends/blob/main/images/white.png?raw=true?raw=true" id="bigimg">
+        <a id="urlLink" href=''>
+            <img src="https://github.com/ksts0826/RandomLegends/blob/main/images/white.png?raw=true?raw=true" id="bigimg" rel="preload">
+        </a>
         <form action="#" id="form" class="example">
             <input type="submit" value="RANDOM PICK">
         </form> 
@@ -85,118 +82,183 @@
 <p>© 2022 green1221</p>
 </div><!-- /.container -->
 </footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+    const url = "https://ksts0826.github.io/RandomLegends/legends.json";
+    $.getJSON(url, function(data){
+    console.log('data : ', data);
+    });
+</script>
 <script>
 'use strict';
 
-// レジェンドの数
-var legendsNum = 24
-// 初期値
+// json
+var jsonData = 
+{
+    "total": 23,
+    1: {
+         id: 1, 
+         "name": "ブラッドハウンド",
+         "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/bloodhound.png?raw=true?raw=true" ,
+         "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/bloodhound",
+         "season": 0
+    },
+    2: { id: 2,
+        "name": "ジブラルタル",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/gibraltar.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/gibraltar",
+        "season": 0
+    },
+    3: { id: 3,
+        "name": "ライフライン",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/lifeline.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/lifeline",
+        "season": 0
+    },
+    4: { id: 4,
+        "name": "パスファインダー",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/pathfinder.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/pathfinder",
+        "season": 0
+    },
+    5: { id: 5,
+        "name": "レイス",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/wraith.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/wraith",
+        "season": 0
+    },
+    6: { id: 6,
+        "name": "バンガロール",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/bangalore.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/bangalore",
+        "season": 0
+    },    
+    7: { id: 7,
+        "name": "コースティック",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/caustic.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/caustic",
+        "season": 0
+    },
+    8: { id: 8,
+        "name": "ミラージュ",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/mirage.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/mirage",
+        "season": 0
+    },
+    9: { id: 9,
+        "name": "オクタン",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/octane.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/octane",
+        "season": 1
+    },
+    10: { id: 10,
+        "name": "ワットソン",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/wattson.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/wattson",
+        "season": 2
+    },
+    11: { id: 11,
+        "name": "クリプト",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/crypto.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/crypto",
+        "season": 3
+    },
+    12: { id: 12,
+        "name": "レヴナントw",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/revenant.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/revenant",
+        "season": 4
+    },
+    13: { id: 13,
+        "name": "ローバ",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/loba.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/loba",
+        "season": 5
+    },
+    14: { id: 14,
+        "name": "ランパート",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/rampart.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/rampart",
+        "season": 6
+    },
+    15: { id: 15,
+        "name": "ホライゾン",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/horizon.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/horizon",
+        "season": 7
+    },
+    16: { id: 16,
+        "name": "ヒューズ",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/fuse.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/fuse",
+        "season": 8
+    },
+    17: { id: 17,
+        "name": "ヴァルキリー",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/valkyrie.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/valkyrie",
+        "season": 9
+    },
+    18: { id: 18,
+        "name": "シア",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/seer.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/seer",
+        "season": 10
+    },
+    19: { id: 19,
+        "name": "アッシュ",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/ash.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/ash",
+        "season": 11
+    },
+    20: { id: 20,
+        "name": "マッドマギー",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/maggie.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/maggie",
+        "season": 12
+    },
+    21: { id: 21,
+        "name": "ニューキャッスル",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/newcastle.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/newcastle",
+        "season": 13
+    },
+    22: { id: 22,
+        "name": "ヴァンテージ",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/vantage.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/vantage",
+        "season": 14
+    },
+    23: { id: 23,
+        "name": "カタリスト",
+        "img": "https://github.com/ksts0826/RandomLegends/blob/main/images/catalyst.png?raw=true?raw=true",
+        "url": "https://www.ea.com/ja-jp/games/apex-legends/about/characters/catalyst",
+        "season": 15
+    }
+}
+
+// レジェンドの総数
+var legendsNum = jsonData.total
+// レジェンドの画像とurl取得
+function getLegendImage(legendNum){
+    document.getElementById('bigimg').src = jsonData[legendNum].img;
+    // 画像のリンク
+    var target = document.getElementById("urlLink")
+    target.href = jsonData[legendNum].url;
+}
+// レジェンドの名前取得
+async function getLegendName(legendNum){
+    await getLegendImage(legendNum);
+    document.getElementById('legendName').textContent = jsonData[legendNum].name;
+}
 // ボタンを押したらレジェンドを表示
 document.getElementById('form').onsubmit = function(event) {
     event.preventDefault();
     // レジェンドの番号をランダムに取得
     var randomNum = Math.floor( Math.random() * legendsNum ) +1;
-    // レジェンドの番号に対応させて表示を変更
-    // ロジックは作り直す． json 外に出す？関数は別にする
-    if (randomNum == 1) {
-        document.getElementById('legendName').textContent = `レイス`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/wraith.png?raw=true?raw=true";
-    }
-    if (randomNum == 2) {
-        document.getElementById('legendName').textContent = `ブラッドハウンド`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/bloodhound.png?raw=true?raw=true";
-    }
-    if (randomNum == 3) {
-        document.getElementById('legendName').textContent = `アッシュ`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/ash.png?raw=true?raw=true";
-    }
-    if (randomNum == 4) {
-        document.getElementById('legendName').textContent = `バンガロール`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/bangalore.png?raw=true";
-    }
-    if (randomNum == 5) {
-        document.getElementById('legendName').textContent = `コースティック`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/caustic.png?raw=true";
-    }
-    if (randomNum == 6) {
-        document.getElementById('legendName').textContent = `クリプト`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/crypto.png?raw=true";
-    }
-    if (randomNum == 7) {
-        document.getElementById('legendName').textContent = `ローバ`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/loba.png?raw=true?raw=true";
-    }
-    if (randomNum == 8) {
-        document.getElementById('legendName').textContent = `オクタン`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/octane.png?raw=true";
-    }
-    if (randomNum == 9) {
-        document.getElementById('legendName').textContent = `パスファインダー`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/pathfinder.png?raw=true";
-    }
-    if (randomNum == 10) {
-        document.getElementById('legendName').textContent = `ランパート`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/rampart.png?raw=true";
-    }
-    if (randomNum == 11) {
-        document.getElementById('legendName').textContent = `レヴナントw`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/revenant.png?raw=true";
-    }
-    if (randomNum == 12) {
-        document.getElementById('legendName').textContent = `シア`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/seer.png?raw=true";
-    }
-    if (randomNum == 13) {
-        document.getElementById('legendName').textContent = `ヴァルキリー`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/valkyrie.png?raw=true";
-    }
-    if (randomNum == 14) {
-        document.getElementById('legendName').textContent = `ヴァンテージ`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/vantage.png?raw=true";
-    }
-    if (randomNum == 15) {
-        document.getElementById('legendName').textContent = `ワットソン`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/wattson.png?raw=true";
-    }
-    if (randomNum == 16) {
-        document.getElementById('legendName').textContent = `カタリスト`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/catalyst.png?raw=true";
-    }
-    if (randomNum == 17) {
-        document.getElementById('legendName').textContent = `ホライゾン`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/horizon.png?raw=true";
-    }
-    if (randomNum == 18) {
-        document.getElementById('legendName').textContent = `ジブラルタル`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/gibraltar.png?raw=true";
-    }
-    if (randomNum == 19) {
-        document.getElementById('legendName').textContent = `マッドマギー`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/maggie.png?raw=true";
-    }
-    if (randomNum == 20) {
-        document.getElementById('legendName').textContent = `ミラージュ`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/mirage.png?raw=true";
-    }
-    if (randomNum == 21) {
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/lifeline.png?raw=true";
-        document.getElementById('legendName').textContent = `ライフライン`; 
-    }
-    if (randomNum == 22) {
-        document.getElementById('legendName').textContent = `ヒューズ`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/fuse.png?raw=true";
-    }
-    if (randomNum == 23) {
-        document.getElementById('legendName').textContent = `ニューキャッスル`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/newcastle.png?raw=true";
-    }
-    if (randomNum == 24) {
-        document.getElementById('legendName').textContent = `ホライゾン`; 
-        document.getElementById('bigimg').src = "https://github.com/ksts0826/RandomLegends/blob/main/images/horizon.png?raw=true";
-    }
+    // レジェンドの情報を取得
+    getLegendName(randomNum);
 }
-    
-    // document.getElementById('legendName').textContent = `「${max}」択なら，${randomNum}番目！！`; 
 </script>
 </body>
 </html>
