@@ -51,12 +51,7 @@
 <main>
 <div class="container">
 <section>
-    <!--
-    <p id="select2">あああ</p>
-    <p id="select3">あああ</p>
-    <p id="select4">あああ</p>
-    <p id="select5">あああ</p>
-    -->
+
 <form action="#" id="form" class="example">
     何択？<br>
     <input type="number" name="word">
@@ -70,7 +65,7 @@
 </main>
 <footer>
 <div class="container">
-<p>JavaScript Samples</p>
+<p>©︎Kouichi Nagatanis</p>
 </div><!-- /.container -->
 </footer>
 <script>
@@ -78,29 +73,6 @@
 
 const getMinutes = new Date().getMinutes();
 
-//let taku2 = getMinutes % 2;
-//let taku3 = getMinutes % 3;
-//let taku4 = getMinutes % 4;
-//let taku5 = getMinutes % 5;
-/*if(taku2 === 0){
-    taku2 = 2
-}
-if(taku3 === 0){
-    taku3 = 3
-}
-if(taku4 === 0){
-    taku4 = 4
-}
-if(taku2 === 5){
-    taku5 = 5
-}
-*/
-/*
-document.getElementById('select2').textContent = "2択なら，" + taku2 +  "番目！"
-document.getElementById('select3').textContent = "3択なら，" + taku3 + "番目！"
-document.getElementById('select4').textContent = "4択なら，" + taku4 + "番目！"
-document.getElementById('select5').textContent = "5択なら，" + taku5 + "番目！"
-*/
 
 document.getElementById('form').onsubmit = function(event) {
     event.preventDefault();
