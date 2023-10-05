@@ -6,7 +6,14 @@
 <title>選択決定くん</title>
 <link rel="shortcut icon" href="https://ksts0826.github.io/ChoiceApp/_common/images/favicon.ico" />
 <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<!--git hub Pages 用のCSS-->
+
 <link href="https://ksts0826.github.io/RandomLegends/css/style.css" rel="stylesheet">
+
+<!--git hub Pages 用のCSSここまで-->
+<!--ローカル用のCSS
+<link rel="stylesheet" href="css/style.css">
+-->
 <style>
     section img {
         max-width: 100%;
@@ -38,6 +45,16 @@
     width: fit-content;
     margin: auto;
     }
+    .keibaSentaku{
+    width: 200px; /* 幅を調整（必要に応じて調整） */
+    height: 50px; /* 高さを調整（幅と同じく正方形にするために設定） */
+    font-size: 36px; /* 数字のフォントサイズを大きく設定 */
+    padding: 10px; /* 内部余白を調整（必要に応じて調整） */
+    text-align: center; /* テキストを中央揃えにする */
+    display: inline-block; /* インライン要素からブロック要素に変更 */
+    position: relative;
+    margin: auto;
+    }
 </style>
 </head>
 
@@ -55,9 +72,9 @@
 <form action="#" id="form" class="example" onsubmit="return false;">
     <label for="inputNumber">何択？</label>
     <br>
-    <input type="number" name="inputNumber" min="2" required>
+    <input class="keibaSentaku" type="number" name="inputNumber" min="2" required>
     <br>
-    <input type="submit" value="決定" >
+    <input class="keibaSentaku" type="submit" value="決定" >
 </form>
 <p id="output"></p>
 <p id="twoNumbers"></p>
