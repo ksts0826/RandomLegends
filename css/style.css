@@ -127,7 +127,7 @@ input[type="text"] {
 }
 input[type="submit"] {
     /* padding: 0em 0em;*/
-    font-size: 18px;
+    font-size: 20px;
     border: none;
     outline: none;
     color: rgb(255, 255, 255);
@@ -137,6 +137,9 @@ input[type="submit"] {
     z-index: 0;
     border-radius: 100px;
     margin: 10px;
+    width: 200px; /* 幅を調整（必要に応じて調整） */
+    height: 50px; /* 高さを調整 */
+    text-align: center; /* テキストを中央揃えにする */
   }
   /*
   .bn5:before {
