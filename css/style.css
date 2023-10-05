@@ -29,14 +29,14 @@ body {
     }
 }
 header {
-    background-color: #1aaedb;
+    background-color: #1a554b;
     border-bottom: #ead963 6px solid;
 }
 header .container {
     min-height: 60px;
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 76px;
+    /*padding-left: 76px;*/
     background-image: url("https://ksts0826.github.io/ChoiceApp/_common/images/logo.svg");
     background-repeat: no-repeat;
     background-size: 53px;
@@ -85,7 +85,7 @@ main .container {
     background-color: #fff;
 }
 footer {
-    background-color: #1aaedb;
+    background-color: #1a554b;
 }
 footer .container {
     min-height: 50px;
