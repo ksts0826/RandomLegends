@@ -84,6 +84,7 @@ main {
 main .container {
     margin: 0 auto;
     background-color: #fff;
+    font-size: 16px;
 }
 footer {
     background-color: #1a554b;
@@ -93,7 +94,7 @@ footer .container {
     padding-top:10px;
     padding-bottom:10px;
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     text-align: right;
 }
 @media (min-width: 768px) {
