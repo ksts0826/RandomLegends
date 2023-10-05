@@ -52,13 +52,15 @@
 <!-- 選択肢の欄-->
 <div class="container">
 <section>
-<form action="#" id="form" class="example">
-    何択？?
+<form action="#" id="form" class="example" onsubmit="return false;">
+    <label for="inputNumber">何択？</label>
     <br>
-    <input type="number" name="word">
+    <input type="number" name="inputNumber" min="2" required>
     <input type="submit" value="決定">
 </form>
 <p id="output"></p>
+<p id="twoNumbers"></p>
+<p id="threeNumbers"></p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -75,12 +77,49 @@ const getMinutes = new Date().getMinutes();
 
 
 document.getElementById('form').onsubmit = function(event) {
+    var inputNumber = document.getElementById('form').inputNumber.value ;
     event.preventDefault();
+    if (inputNumber < 2) {
+                alert("2以上の有効な数値を入力してください。");
+                return;
+    }
     var min = 1 ;
-    var max = document.getElementById('form').word.value ;
-    var randomNum = Math.floor( Math.random() * max ) +1;
-    document.getElementById('output').textContent = `「${max}」択なら，${randomNum}番目！！`;
-};
+    //var max = document.getElementById('form').elements.inputNumber.value;
+
+    var randomNum = Math.floor( Math.random() * inputNumber ) +1;
+
+    // 0からmaxValueまでの数字を配列に格納
+    const numbers = Array.from({ length: inputNumber }, (_, i) => i +1);
+
+    // 配列をシャッフルする関数
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    // 配列をシャッフルして最初の3つの数字を取得
+    shuffleArray(numbers);
+    const oneNumber = numbers.slice(0, 1);
+    const twoNumbers = numbers.slice(0, 2);
+    const threeNumbers = numbers.slice(0, 3);
+
+    // 結果を表示
+    if (inputNumber == 2) {
+        document.getElementById('output').textContent = `「${inputNumber}」択なら，${oneNumber}番目！！`;
+        document.getElementById('twoNumbers').textContent = ``;
+        document.getElementById('threeNumbers').textContent = ``;
+    } else if (inputNumber == 3){
+        document.getElementById('output').textContent = `「${inputNumber}」択なら，${oneNumber}番目！！`;
+        document.getElementById('threeNumbers').textContent = `2つ選ぶ場合、` + threeNumbers.join(", ");
+        document.getElementById('threeNumbers').textContent = ``;
+    }　else {
+        document.getElementById('output').textContent = `「${inputNumber}」択なら，${oneNumber}番目！！`;
+        document.getElementById('twoNumbers').textContent = `2つ選ぶ場合、` + twoNumbers.join(", ");
+        document.getElementById('threeNumbers').textContent = `3つ選ぶ場合、` + threeNumbers.join(", ");
+    }
+}
 </script>
 </body>
 </html>
